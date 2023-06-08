@@ -3,12 +3,12 @@ import { saveItem, getItems, onGetItems } from "./firesbase.js";
 const containerItems = document.querySelector(".inventory-cards-container");
 
 window.addEventListener("DOMContentLoaded", async () => {
-	onGetItems((querySnapshot) => {
-		let html = "";
+  onGetItems((querySnapshot) => {
+    let html = "";
 
-		querySnapshot.forEach((doc) => {
-			const items = doc.data();
-			html += `
+    querySnapshot.forEach((doc) => {
+      const items = doc.data();
+      html += `
 		<div class="wrapper-cards">
 			<div class="botones">
 				<div class="btn-Action">
@@ -17,9 +17,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 							href=""
 							class="btn-newWrapReg color-edit"
 						>
-							<span class="material-symbols-outlined"
-								>edit</span
-							>
+							<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#f2f2f2"><path d="M180-180h44l443-443-44-44-443 443v44Zm614-486L666-794l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248-120H120v-128l504-504 128 128Zm-107-21-22-22 44 44-22-22Z"/></svg>
 						</a>
 					</div>
 					<div class="btn-delate">
@@ -27,9 +25,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 							href=""
 							class="btn-newWrapReg color-delate"
 						>
-							<span class="material-symbols-outlined"
-								>delete</span
-							>
+							<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#f2f2f2"><path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z"/></svg>
 						</a>
 					</div>
 				</div>
@@ -134,60 +130,60 @@ window.addEventListener("DOMContentLoaded", async () => {
 			</div>
 		</div>
 				`;
-		});
+    });
 
-		containerItems.innerHTML = html;
-	});
+    containerItems.innerHTML = html;
+  });
 });
 
 const form = document.getElementById("item-form");
 
 form.addEventListener("submit", (e) => {
-	e.preventDefault();
+  e.preventDefault();
 
-	const bookTitle = form["bookTitle"];
-	const bookAuthor = form["authorName"];
-	const bookGender = form["bookGender"];
-	const bookDescription = form["bookDescription"];
-	const bookEditorial = form["publisher"];
+  const bookTitle = form["bookTitle"];
+  const bookAuthor = form["authorName"];
+  const bookGender = form["bookGender"];
+  const bookDescription = form["bookDescription"];
+  const bookEditorial = form["publisher"];
 
-	const bookCollection = form["collection"];
-	const bookISBN = form["ISBN"];
-	const bookCountryOrigin = form["countryOrigin"];
-	const bookPublication = form["publicationYear"];
-	const bookPages = form["numPages"];
+  const bookCollection = form["collection"];
+  const bookISBN = form["ISBN"];
+  const bookCountryOrigin = form["countryOrigin"];
+  const bookPublication = form["publicationYear"];
+  const bookPages = form["numPages"];
 
-	const bookVolume = form["volumeNumber"];
-	const bookSize = form["bookSize"];
-	const bookFormat = form["bookFormat"];
-	const bookTypePublication = form["publicationType"];
-	const bookColor = form["bookColor"];
+  const bookVolume = form["volumeNumber"];
+  const bookSize = form["bookSize"];
+  const bookFormat = form["bookFormat"];
+  const bookTypePublication = form["publicationType"];
+  const bookColor = form["bookColor"];
 
-	const bookPrice = form["priceAmount"];
-	const bookStockQuantity = form["stockQuantity"];
-	const bookImage = form["fileProps"];
+  const bookPrice = form["priceAmount"];
+  const bookStockQuantity = form["stockQuantity"];
+  const bookImage = form["fileProps"];
 
-	// console.log(bookImage.src);
+  // console.log(bookImage.src);
 
-	saveItem(
-		bookTitle.value,
-		bookAuthor.value,
-		bookGender.value,
-		bookDescription.value,
-		bookEditorial.value,
-		bookCollection.value,
-		bookISBN.value,
-		bookCountryOrigin.value,
-		bookPublication.value,
-		bookPages.value,
-		bookVolume.value,
-		bookSize.value,
-		bookFormat.value,
-		bookTypePublication.value,
-		bookColor.value,
-		bookPrice.value,
-		bookStockQuantity.value,
-		bookImage.src
-	);
-	form.reset();
+  saveItem(
+    bookTitle.value,
+    bookAuthor.value,
+    bookGender.value,
+    bookDescription.value,
+    bookEditorial.value,
+    bookCollection.value,
+    bookISBN.value,
+    bookCountryOrigin.value,
+    bookPublication.value,
+    bookPages.value,
+    bookVolume.value,
+    bookSize.value,
+    bookFormat.value,
+    bookTypePublication.value,
+    bookColor.value,
+    bookPrice.value,
+    bookStockQuantity.value,
+    bookImage.src
+  );
+  form.reset();
 });
