@@ -54,7 +54,7 @@
   background-color: #fdeca6;
 }
 .color-edit {
-  color: rgb(0, 106, 255);
+  fill: rgb(0, 106, 255);
 }
 
 .color-edit:hover {
@@ -64,13 +64,13 @@
 }
 
 .color-delate {
-  color: red;
+  fill: red;
 }
 
 .color-delate:hover {
   background-color: #c62828;
   font-weight: bold;
-  color: #f2f2f2;
+  fill: #f2f2f2;
 }
 
 /* Contenedor de las cartas del inventario */
@@ -141,17 +141,31 @@ img:hover {
 .section-information-book,
 .section-details-book {
   text-align: justify;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   padding: 10px;
   border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 5px;
 }
 
+.section-information-book {
+  flex-direction: column;
+  display: flex;
+}
 /* .section-details-book {
 } */
 
+.section-details-book {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.section-details-book1,
+.section-details-book2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .wrapper-information {
   padding: 3px 0;
 }
@@ -161,9 +175,14 @@ img:hover {
   text-transform: uppercase;
 }
 
+.information {
+  color: #576490;
+}
+
 .description {
   line-height: 30px;
   margin-top: 10px;
+  color: #576490;
 }
 
 /* DEVELOPERS */

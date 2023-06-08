@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 							href=""
 							class="btn-newWrapReg color-edit"
 						>
-							<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#f2f2f2"><path d="M180-180h44l443-443-44-44-443 443v44Zm614-486L666-794l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248-120H120v-128l504-504 128 128Zm-107-21-22-22 44 44-22-22Z"/></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" ><path d="M180-180h44l443-443-44-44-443 443v44Zm614-486L666-794l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248-120H120v-128l504-504 128 128Zm-107-21-22-22 44 44-22-22Z"/></svg>
 						</a>
 					</div>
 					<div class="btn-delate">
@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 							href=""
 							class="btn-newWrapReg color-delate"
 						>
-							<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#f2f2f2"><path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z"/></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z"/></svg>
 						</a>
 					</div>
 				</div>
@@ -65,66 +65,70 @@ window.addEventListener("DOMContentLoaded", async () => {
 						</div>
 					</div>
 					<div class="section-details-book">
-						<div class="wrapper-information">
-							<p class="referencia">Colección:</p>
-							<p class="information">${items.collectionBook}</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">ISBN:</p>
-							<p class="information">
-								${items.isbn}
-							</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">Pais de origen</p>
-							<p class="information">${items.countryOrigin}</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">
-								Año de publicación:
-							</p>
-							<p class="information">${items.publication}</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">
-								Número de páginas:
-							</p>
-							<p class="information">${items.pages}</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">Volumen:</p>
-							<p class="information">${items.volume}</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">Tamaño:</p>
-							<p class="information">${items.size}</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">Formato:</p>
-							<p class="information">
-								${items.format}
-							</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">
-								Tipo de publicación:
-							</p>
-							<p class="information">${items.typePublication}</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">Color</p>
-							<p class="information">
-								${items.color}
-							</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">Precio:</p>
-							<p class="information">$${items.price}</p>
-						</div>
-						<div class="wrapper-information">
-							<p class="referencia">Stock:</p>
-							<p class="information">${items.stockQuantity}</p>
-						</div>
+            <div class="section-details-book1">
+              <div class="wrapper-information">
+                  <p class="referencia">Colección:</p>
+                  <p class="information">${items.collectionBook}</p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">ISBN:</p>
+                  <p class="information">
+                    ${items.isbn}
+                  </p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">Pais de origen</p>
+                  <p class="information">${items.countryOrigin}</p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">
+                    Año de publicación:
+                  </p>
+                  <p class="information">${items.publication}</p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">
+                    Número de páginas:
+                  </p>
+                  <p class="information">${items.pages}</p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">Volumen:</p>
+                  <p class="information">${items.volume}</p>
+              </div>
+            </div>
+            <div class="section-details-book2">
+              <div class="wrapper-information">
+                  <p class="referencia">Tamaño:</p>
+                  <p class="information">${items.size}</p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">Formato:</p>
+                  <p class="information">
+                    ${items.format}
+                  </p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">
+                    Tipo de publicación:
+                  </p>
+                  <p class="information">${items.typePublication}</p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">Color</p>
+                  <p class="information">
+                    ${items.color}
+                  </p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">Precio:</p>
+                  <p class="information">$${items.price}</p>
+              </div>
+              <div class="wrapper-information">
+                  <p class="referencia">Stock:</p>
+                  <p class="information">${items.stockQuantity}</p>
+              </div>
+            </div>
 					</div>
 				</div>
 			</div>
