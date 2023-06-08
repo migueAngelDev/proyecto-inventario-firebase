@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/form-add.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="container-form">
+      <div class="title-form">
+        <p>AGREGAR NUEVO REGISTRO</p>
+        <!-- Botón para cerrar el modal -->
+        <div class="btn-close">
+          <a href="" class="btn-newWrapReg">
+            <span class="material-symbols-outlined"> close </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="wrapper-form">
+        <!-- Aquí inicia el formulario -->
+        <form action="" method="post">
+          <!-- Titulo -->
+          <div class="wrapper-details">
+            <label for="bookTitle ">Título</label>
+            <input type="text" id="bookTitle " name="bookTitle" required />
+          </div>
+
+          <!-- Autor -->
+          <div class="wrapper-details">
+            <label for="authorName">Autor</label>
+            <input type="text" id="authorName" name="authorName" required />
+          </div>
+
+          <!-- Género -->
+          <div class="wrapper-details">
+            <label for="bookGenre">Género</label>
+            <select name="bookGenre" id="bookGenre">
+              <option value=""></option>
+              <option value="bookGenre1">BL</option>
+              <option value="bookGenre2">GL</option>
+              <option value="bookGenre3">Romance</option>
+              <option value="bookGenre4">XianXia</option>
+              <option value="bookGenre5">Terror</option>
+              <option value="bookGenre6">Suspenso</option>
+              <option value="bookGenre7">Misterio</option>
+            </select>
+          </div>
+
+          <!-- Descripción -->
+          <div class="wrapper-details">
+            <label for="bookDescription">Descripción</label>
+            <textarea
+              name="bookDescription"
+              id="bookDescription"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Editorial -->
+          <div class="wrapper-details">
+            <label for="publisher">Editorial</label>
+            <input type="text" id="publisher" name="publisher" required />
+          </div>
+
+          <!-- Colección -->
+          <div class="wrapper-details">
+            <label for="collection">Colección</label>
+            <input type="text" id="collection" name="collection" required />
+          </div>
+
+          <!-- ISBN -->
+          <div class="wrapper-details">
+            <label for="ISBN">ISBN</label>
+            <input type="text" id="ISBN" name="ISBN" required />
+          </div>
+
+          <!-- País de Origen -->
+          <div class="wrapper-details">
+            <label for="countryOrigin">País de Origen</label>
+            <input
+              type="text"
+              id="countryOrigin"
+              name="countryOrigin"
+              required
+            />
+          </div>
+
+          <!-- Año de Publicación -->
+          <div class="wrapper-details">
+            <label for="publicationYear">Año de Publicación</label>
+            <input
+              type="number"
+              id="publicationYear"
+              name="publicationYear"
+              required
+            />
+          </div>
+
+          <!-- Número de Páginas -->
+          <div class="wrapper-details">
+            <label for="numPages">Número de Páginas</label>
+            <input type="number" id="numPages" name="numPages" required />
+          </div>
+
+          <!-- Volumen -->
+          <div class="wrapper-details">
+            <label for="volumeNumber">Volumen</label>
+            <input
+              type="number"
+              id="volumeNumber"
+              name="volumeNumber"
+              required
+            />
+          </div>
+
+          <!-- Tamaño -->
+          <div class="wrapper-details">
+            <label for="bookSize">Tamaño</label>
+            <input
+              type="text"
+              id="bookSize"
+              name="bookSize"
+              placeholder=" Ejemplo 13 x 18 cms"
+              required
+            />
+          </div>
+
+          <!-- Formato -->
+          <div class="wrapper-details">
+            <label for="bookFormat">Formato</label>
+            <select name="bookFormat" id="bookFormat">
+              <option value=""></option>
+              <option value="bookFormat1">Tankobon</option>
+              <option value="bookForma2">Aizoban</option>
+              <option value="bookFormat3">Kanzenban</option>
+              <option value="bookFormat4">Soshuhen</option>
+              <option value="bookFormat5">Bunkoban</option>
+              <option value="bookFormat6">Wide-ban</option>
+            </select>
+          </div>
+
+          <!-- Tipo de publicación -->
+          <div class="wrapper-details">
+            <label for="publicationType">Tipo de Publicación</label>
+            <input
+              type="text"
+              id="publicationType"
+              name="publicationType"
+              required
+            />
+          </div>
+
+          <!-- Color -->
+          <div class="wrapper-details">
+            <label for="bookColor">Color</label>
+            <select name="bookColor" id="bookColor">
+              <option value=""></option>
+              <option value="bookColor1">B/N</option>
+              <option value="bookColor2">Color</option>
+              <option value="bookColor4">B/N con páginas a color</option>
+            </select>
+          </div>
+
+          <!-- Precio -->
+          <div class="wrapper-details">
+            <label for="priceAmount">Precio</label>
+            <input type="number" id="priceAmount" name="priceAmount" required />
+          </div>
+
+          <!-- Stock -->
+          <div class="wrapper-details">
+            <label for="stockQuantity ">Stock</label>
+            <input
+              type="number"
+              id="stockQuantity"
+              name="stockQuantity"
+              required
+            />
+          </div>
+
+          <!-- Imagen -->
+          <div class="wrapper-details">
+            <label for="bookImage">Portada</label>
+            <input type="file" id="bookImage" name="bookImage" required />
+          </div>
+
+          <!-- Botón -->
+          <div class="btn-add">
+            <input type="submit" value="Guardar" />
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

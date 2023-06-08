@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Nunito, sans-serif;
+}
+
+.container-form {
+  max-width: 850px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 5px;
+}
+
+.title-form {
+  background-color: #000000;
+  color: #f1b955;
+  font-weight: bold;
+  letter-spacing: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+  padding: 20px 30px;
+}
+
+.wrapper-form form {
+  background-color: #ffffff;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+.btn-newWrapReg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+.wrapper-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper-details label {
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.wrapper-details input,
+.wrapper-details select,
+.wrapper-details textarea {
+  font-size: 1em;
+  height: 2.6rem;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.btn-add {
+  display: flex;
+  align-items: left;
+  width: 100%;
+  justify-content: left;
+}
+
+.btn-add input[type="submit"] {
+  height: 2.6rem;
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+  background-color: #fdeca6;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-add input[type="submit"]:hover {
+  background-color: #f1b955;
+  font-weight: bold;
+  color: #f2f2f2;
+}
+
+textarea {
+  resize: none;
+  border: none;
+}
+
+@media (max-width: 760px) {
+  .wrapper-form form {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,12 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    hola mundo
-</body>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- El inventario que le va aparecer despues de dar clic en acceder -->
+    <main>
+      <!-- Contendor del inventario -->
+      <div class="inventory-fort">
+        <!-- Contenedor donde se encuenta el encabezador -->
+        <div class="header-inventory">
+          <!-- Content = Nombre del Inventario/Empresa -->
+          <img src="./SVG/company.svg" alt="" />
+          <h2 class="company-name">Inventario Milky Way Ediciones . . .</h2>
+        </div>
+        <hr />
+        <!-- Contenedor para agregar un nuevo registro -->
+        <div class="newWrapReg">
+          <div class="btn-newWrapReg-end">
+            <a
+              href=""
+              class="btn-newWrapReg color-add hover-color"
+              data-modal="form-add.html"
+            >
+              <span class="material-symbols-outlined add"> post_add </span>
+            </a>
+          </div>
+        </div>
+        <hr />
+
+        <!-- Contenedor para la tabla del inventario donde se van a registrar todos los mangas -->
+        <div class="inventory-cards-container">
+          <!-- La carta -->
+          <div class="wrapper-cards">
+            <!-- Donde va almacenar el nombre -->
+            <div class="botones">
+              <!-- Contiene le boton de editar y eliminar -->
+              <div class="btn-Action">
+                <div class="btn-edit">
+                  <a href="" class="btn-newWrapReg color-edit">
+                    <span class="material-symbols-outlined">edit</span>
+                  </a>
+                </div>
+                <div class="btn-delate">
+                  <a href="" class="btn-newWrapReg color-delate">
+                    <span class="material-symbols-outlined">delete</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Contenido de la carta/Informativo -->
+            <div class="content-card">
+              <!-- para la imagen -->
+              <div class="wrapper-img">
+                <img src="./IMG/Confuso_primer_amor_03.webp" alt="" />
+              </div>
+              <!-- La ficha tecnica -->
+              <div class="data-sheet">
+                <div class="section-information-book">
+                  <div class="wrapper-information">
+                    <p class="referencia">Titulo:</p>
+                    <p class="information">Confuso Primer Amor</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Autor:</p>
+                    <p class="information">Nanatsi</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Género:</p>
+                    <p class="information">Romance</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Descripción:</p>
+                    <p class="description">
+                      Los recuerdos de nuestro tiempo juntos siguen atascados en
+                      mi garganta, incapaces de convertirse en palabras...
+                    </p>
+                    <p class="description">
+                      El grupo se prepara para su primer concierto, pero Mafuyu
+                      no logra encontrar las palabras para escribir la letra de
+                      la canción. Mientras tanto, Uenoyama se siente confundido
+                      por lo que empieza a sentir por él, y más después de
+                      enterarse de ciertas cosas sobre Mafuyu...
+                    </p>
+                    <p class="description">
+                      Entre disputas y tensiones, y con el concierto cada vez
+                      más cerca, descubrimos retazos de un pasado que ha
+                      permanecido enterrado hasta ahora.
+                    </p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Editorial:</p>
+                    <p class="information">Milky Way</p>
+                  </div>
+                </div>
+                <!-- Columna de los detalles del libro -->
+                <div class="section-details-book">
+                  <div class="wrapper-information">
+                    <p class="referencia">Colección:</p>
+                    <p class="information">Given</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">ISBN:</p>
+                    <p class="information">978-84-17820-46-6</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Pais de origen</p>
+                    <p class="information">Japón</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Año de publicación:</p>
+                    <p class="information">2021</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Número de páginas:</p>
+                    <p class="information">178</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Volumen:</p>
+                    <p class="information">3</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Tamaño:</p>
+                    <p class="information">13 x 18 cms</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Formato:</p>
+                    <p class="information">Rústica con sobrecubierta</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Tipo de publicación:</p>
+                    <p class="information">Tankobon</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Color</p>
+                    <p class="information">B/N con páginas a color</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Precio:</p>
+                    <p class="information">$160</p>
+                  </div>
+                  <div class="wrapper-information">
+                    <p class="referencia">Stock:</p>
+                    <p class="information">20</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <!-- Contenedor para los nombre de los creadores -->
+
+        <div class="developers">
+          <p>Pérez Coello Miguel Ángel</p>
+          <p>Castañeda Pérez Tannia Isabel</p>
+        </div>
+        <hr />
+      </div>
+    </main>
+
+    <!-- <script>
+      function string(cadena = "") {
+        for (let i = 1; i <= cadena.length; i++) {
+          console.log(i);
+        }
+      }
+
+      string(
+        ""
+      );
+    </script> -->
+
+    <script src="/JS/abrirModal.js"></script>
+  </body>
 </html>
