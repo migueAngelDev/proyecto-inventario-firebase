@@ -25,31 +25,31 @@
 
       <div class="wrapper-form">
         <!-- Aquí inicia el formulario -->
-        <form action="" method="post">
+        <form id="item-form">
           <!-- Titulo -->
           <div class="wrapper-details">
             <label for="bookTitle ">Título</label>
-            <input type="text" id="bookTitle" name="bookTitle" required />
+            <input type="text" id="bookTitle" name="bookTitle"  />
           </div>
 
           <!-- Autor -->
           <div class="wrapper-details">
             <label for="authorName">Autor</label>
-            <input type="text" id="authorName" name="authorName" required />
+            <input type="text" id="authorName" name="authorName"  />
           </div>
 
           <!-- Género -->
           <div class="wrapper-details">
             <label for="bookGenre">Género</label>
-            <select name="bookGenre" id="bookGenre">
-              <option value=""></option>
-              <option value="bookGenre1">BL</option>
-              <option value="bookGenre2">GL</option>
-              <option value="bookGenre3">Romance</option>
-              <option value="bookGenre4">XianXia</option>
-              <option value="bookGenre5">Terror</option>
-              <option value="bookGenre6">Suspenso</option>
-              <option value="bookGenre7">Misterio</option>
+            <select name="bookGenre" id="bookGender">
+              <option value="">Escoge un género</option>
+              <option value="BL">BL</option>
+              <option value="GL">GL</option>
+              <option value="Romance">Romance</option>
+              <option value="XianXia">XianXia</option>
+              <option value="Terror">Terror</option>
+              <option value="Suspenso">Suspenso</option>
+              <option value="Misterio">Misterio</option>
             </select>
           </div>
 
@@ -59,26 +59,26 @@
             <textarea
               name="bookDescription"
               id="bookDescription"
-              required
+              
             ></textarea>
           </div>
 
           <!-- Editorial -->
           <div class="wrapper-details">
             <label for="publisher">Editorial</label>
-            <input type="text" id="publisher" name="publisher" required />
+            <input type="text" id="publisher" name="publisher"  />
           </div>
 
           <!-- Colección -->
           <div class="wrapper-details">
             <label for="collection">Colección</label>
-            <input type="text" id="collection" name="collection" required />
+            <input type="text" id="collection" name="collection"  />
           </div>
 
           <!-- ISBN -->
           <div class="wrapper-details">
             <label for="ISBN">ISBN</label>
-            <input type="text" id="ISBN" name="ISBN" required />
+            <input type="text" id="ISBN" name="ISBN"  />
           </div>
 
           <!-- País de Origen -->
@@ -88,7 +88,7 @@
               type="text"
               id="countryOrigin"
               name="countryOrigin"
-              required
+              
             />
           </div>
 
@@ -99,14 +99,14 @@
               type="number"
               id="publicationYear"
               name="publicationYear"
-              required
+              
             />
           </div>
 
           <!-- Número de Páginas -->
           <div class="wrapper-details">
             <label for="numPages">Número de Páginas</label>
-            <input type="number" id="numPages" name="numPages" required />
+            <input type="number" id="numPages" name="numPages"  />
           </div>
 
           <!-- Volumen -->
@@ -116,7 +116,7 @@
               type="number"
               id="volumeNumber"
               name="volumeNumber"
-              required
+              
             />
           </div>
 
@@ -128,7 +128,7 @@
               id="bookSize"
               name="bookSize"
               placeholder=" Ejemplo 13 x 18 cms"
-              required
+              
             />
           </div>
 
@@ -137,12 +137,12 @@
             <label for="bookFormat">Formato</label>
             <select name="bookFormat" id="bookFormat">
               <option value=""></option>
-              <option value="bookFormat1">Tankobon</option>
-              <option value="bookForma2">Aizoban</option>
-              <option value="bookFormat3">Kanzenban</option>
-              <option value="bookFormat4">Soshuhen</option>
-              <option value="bookFormat5">Bunkoban</option>
-              <option value="bookFormat6">Wide-ban</option>
+              <option value="Tankobon">Tankobon</option>
+              <option value="Aizoban">Aizoban</option>
+              <option value="Kanzenban">Kanzenban</option>
+              <option value="Soshuhen">Soshuhen</option>
+              <option value="Bunkoban">Bunkoban</option>
+              <option value="Wide-ban">Wide-ban</option>
             </select>
           </div>
 
@@ -153,7 +153,7 @@
               type="text"
               id="publicationType"
               name="publicationType"
-              required
+              
             />
           </div>
 
@@ -162,16 +162,16 @@
             <label for="bookColor">Color</label>
             <select name="bookColor" id="bookColor">
               <option value=""></option>
-              <option value="bookColor1">B/N</option>
-              <option value="bookColor2">Color</option>
-              <option value="bookColor4">B/N con páginas a color</option>
+              <option value="B/N">B/N</option>
+              <option value="Color">Color</option>
+              <option value="B/N con páginas a color">B/N con páginas a color</option>
             </select>
           </div>
 
           <!-- Precio -->
           <div class="wrapper-details">
             <label for="priceAmount">Precio</label>
-            <input type="number" id="priceAmount" name="priceAmount" required />
+            <input type="number" id="priceAmount" name="priceAmount"  />
           </div>
 
           <!-- Stock -->
@@ -181,14 +181,14 @@
               type="number"
               id="stockQuantity"
               name="stockQuantity"
-              required
+              
             />
           </div>
 
           <!-- Imagen -->
           <div class="wrapper-details">
             <label for="bookImage">Portada</label>
-            <input type="file" id="bookImage" name="bookImage" required />
+            <input type="file" id="bookImage" name="bookImage"  />
           </div>
 
           <!-- Botón -->
@@ -198,5 +198,6 @@
         </form>
       </div>
     </section>
+    <script type="module" src="./JS/app.js"></script>
   </body>
 </html>
