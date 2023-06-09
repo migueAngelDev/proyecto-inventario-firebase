@@ -73,3 +73,17 @@ export const getItems = () => getDocs(collection(db, "mangas"));
 
 export const onGetItems = (callback) =>
 	onSnapshot(collection(db, "mangas"), callback);
+
+export const deleteItem = (id) => {
+	deleteDoc(doc(db, "mangas", id));
+};
+
+// export const getItem = async (id) => {
+// 	getDoc(doc(db, "mangas", id));
+// };
+
+export const getItem = async (id) => {
+	const docRef = doc(db, "mangas", id);
+	const docSnap = await getDoc(docRef);
+	return docSnap.data();
+};

@@ -4,9 +4,15 @@ const inputFile = document.getElementById("bookImage");
 const openModal = document.getElementById("open-modal");
 const closeModal = document.getElementById("close-modal");
 const formModal = document.querySelector(".modalForm");
+const preview = document.getElementById("preview");
+const form = document.getElementById("item-form");
+const labelImage = document.querySelector(".img-format");
 
 openModal.addEventListener("click", () => {
 	formModal.classList.remove("hide-modal");
+	form.reset();
+	preview.innerHTML = "";
+	labelImage.textContent = "Escoge una portada";
 });
 
 closeModal.addEventListener("click", () => {

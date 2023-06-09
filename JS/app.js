@@ -1,32 +1,51 @@
-import { saveItem, getItems, onGetItems } from "./firesbase.js";
+import {
+	saveItem,
+	getItems,
+	onGetItems,
+	deleteItem,
+	getItem,
+} from "./firesbase.js";
 
 const containerItems = document.querySelector(".inventory-cards-container");
 
 window.addEventListener("DOMContentLoaded", async () => {
-  onGetItems((querySnapshot) => {
-    let html = "";
+	onGetItems((querySnapshot) => {
+		let html = "";
 
-    querySnapshot.forEach((doc) => {
-      const items = doc.data();
-      html += `
+		querySnapshot.forEach((doc) => {
+			const items = doc.data();
+			html += `
 		<div class="wrapper-cards">
 			<div class="botones">
 				<div class="btn-Action">
-					<div class="btn-edit">
-						<a
-							href=""
-							class="btn-newWrapReg color-edit"
+					<div>
+						<button
+							class="btn-newWrapReg color-edit btn-edit"
+              data-id="${doc.id}"
 						>
-							<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" ><path d="M180-180h44l443-443-44-44-443 443v44Zm614-486L666-794l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248-120H120v-128l504-504 128 128Zm-107-21-22-22 44 44-22-22Z"/></svg>
-						</a>
+							<svg xmlns="http://www.w3.org/2000/svg"
+               height="30"
+                viewBox="0 -960 960 960" width="30"
+                data-id="${doc.id}"
+                ><path 
+              data-id="${doc.id}"
+                 d="M180-180h44l443-443-44-44-443 443v44Zm614-486L666-794l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248-120H120v-128l504-504 128 128Zm-107-21-22-22 44 44-22-22Z"/></svg>
+						</button>
 					</div>
-					<div class="btn-delate">
-						<a
-							href=""
-							class="btn-newWrapReg color-delate"
+					<div class="btn-delete">
+						<button
+							class="btn-newWrapReg color-delete btn-del"
+              data-id="${doc.id}"
 						>
-							<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z"/></svg>
-						</a>
+							<svg xmlns="http://www.w3.org/2000/svg"
+               height="30"
+                viewBox="0 -960 960 960"
+                 width="30"
+                data-id="${doc.id}"
+                 ><path 
+                data-id="${doc.id}"
+                  d="M261-120q-24.75 0-42.375-17.625T201-180v-570h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438v-570ZM367-266h60v-399h-60v399Zm166 0h60v-399h-60v399ZM261-750v570-570Z"/></svg>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -134,60 +153,120 @@ window.addEventListener("DOMContentLoaded", async () => {
 			</div>
 		</div>
 				`;
-    });
+		});
 
-    containerItems.innerHTML = html;
-  });
+		containerItems.innerHTML = html;
+
+		const btnsDelete = containerItems.querySelectorAll(".btn-del");
+
+		btnsDelete.forEach((btn) => {
+			btn.addEventListener("click", ({ target: { dataset } }) => {
+				let confirmation = confirm(
+					"Estás seguro de eliminar este registro?"
+				);
+				if (confirmation) {
+					deleteItem(dataset.id);
+				}
+			});
+		});
+
+		const btnsEdit = containerItems.querySelectorAll(".btn-edit");
+
+		btnsEdit.forEach((btn) => {
+			btn.addEventListener("click", async (e) => {
+				const doc = await getItem(e.target.dataset.id);
+				const formModal = document.querySelector(".modalForm");
+				formModal.classList.remove("hide-modal");
+
+				const bookTitle = (form["bookTitle"].value = doc.title);
+				const bookAuthor = (form["authorName"].value = doc.author);
+				const bookGender = (form["bookGender"].value = doc.gender);
+				const bookDescription = (form["bookDescription"].value =
+					doc.description);
+				const bookEditorial = (form["publisher"].value = doc.editorial);
+
+				const bookCollection = (form["collection"].value =
+					doc.collectionBook);
+				const bookISBN = (form["ISBN"].value = doc.isbn);
+				const bookCountryOrigin = (form["countryOrigin"].value =
+					doc.countryOrigin);
+				const bookPublication = (form["publicationYear"].value =
+					doc.publication);
+				const bookPages = (form["numPages"].value = doc.pages);
+
+				const bookVolume = (form["volumeNumber"].value = doc.volume);
+				const bookSize = (form["bookSize"].value = doc.size);
+				const bookFormat = (form["bookFormat"].value = doc.format);
+				const bookTypePublication = (form["publicationType"].value =
+					doc.typePublication);
+				const bookColor = (form["bookColor"].value = doc.color);
+
+				const bookPrice = (form["priceAmount"].value = doc.price);
+				const bookStockQuantity = (form["stockQuantity"].value =
+					doc.stockQuantity);
+				let labelImage = document.querySelector(".img-format");
+				labelImage.textContent = "Cambiar portada";
+
+				let preview = document.getElementById("preview");
+				preview.innerHTML = `<img src="${doc.image}" alt="${doc.title}" id="fileProps">`;
+			});
+		});
+	});
 });
 
 const form = document.getElementById("item-form");
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+	e.preventDefault();
 
-  const bookTitle = form["bookTitle"];
-  const bookAuthor = form["authorName"];
-  const bookGender = form["bookGender"];
-  const bookDescription = form["bookDescription"];
-  const bookEditorial = form["publisher"];
+	const formModal = document.querySelector(".modalForm");
 
-  const bookCollection = form["collection"];
-  const bookISBN = form["ISBN"];
-  const bookCountryOrigin = form["countryOrigin"];
-  const bookPublication = form["publicationYear"];
-  const bookPages = form["numPages"];
+	const bookTitle = form["bookTitle"];
+	const bookAuthor = form["authorName"];
+	const bookGender = form["bookGender"];
+	const bookDescription = form["bookDescription"];
+	const bookEditorial = form["publisher"];
 
-  const bookVolume = form["volumeNumber"];
-  const bookSize = form["bookSize"];
-  const bookFormat = form["bookFormat"];
-  const bookTypePublication = form["publicationType"];
-  const bookColor = form["bookColor"];
+	const bookCollection = form["collection"];
+	const bookISBN = form["ISBN"];
+	const bookCountryOrigin = form["countryOrigin"];
+	const bookPublication = form["publicationYear"];
+	const bookPages = form["numPages"];
 
-  const bookPrice = form["priceAmount"];
-  const bookStockQuantity = form["stockQuantity"];
-  const bookImage = form["fileProps"];
+	const bookVolume = form["volumeNumber"];
+	const bookSize = form["bookSize"];
+	const bookFormat = form["bookFormat"];
+	const bookTypePublication = form["publicationType"];
+	const bookColor = form["bookColor"];
 
-  // console.log(bookImage.src);
+	const bookPrice = form["priceAmount"];
+	const bookStockQuantity = form["stockQuantity"];
+	const bookImage = form["fileProps"];
+	const bookImagePreview = document.getElementById("preview");
 
-  saveItem(
-    bookTitle.value,
-    bookAuthor.value,
-    bookGender.value,
-    bookDescription.value,
-    bookEditorial.value,
-    bookCollection.value,
-    bookISBN.value,
-    bookCountryOrigin.value,
-    bookPublication.value,
-    bookPages.value,
-    bookVolume.value,
-    bookSize.value,
-    bookFormat.value,
-    bookTypePublication.value,
-    bookColor.value,
-    bookPrice.value,
-    bookStockQuantity.value,
-    bookImage.src
-  );
-  form.reset();
+	saveItem(
+		bookTitle.value,
+		bookAuthor.value,
+		bookGender.value,
+		bookDescription.value,
+		bookEditorial.value,
+		bookCollection.value,
+		bookISBN.value,
+		bookCountryOrigin.value,
+		bookPublication.value,
+		bookPages.value,
+		bookVolume.value,
+		bookSize.value,
+		bookFormat.value,
+		bookTypePublication.value,
+		bookColor.value,
+		bookPrice.value,
+		bookStockQuantity.value,
+		bookImage.src
+	);
+	setTimeout(() => {
+		form.reset();
+		bookImagePreview.innerHTML = "";
+		formModal.classList.add("hide-modal");
+	}, 350);
 });

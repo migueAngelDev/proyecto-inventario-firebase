@@ -63,7 +63,7 @@
   fill: #f2f2f2;
 }
 
-.color-delate {
+.color-delete {
   fill: red;
 }
 
@@ -372,4 +372,37 @@ textarea {
 .hide-modal {
   opacity: 0;
   visibility: hidden;
+}
+
+
+#preview img{
+  width: 500px;
+  max-width: 300px;
+  min-width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#bookImage{
+  display: none;
+}
+
+.details-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-format{
+  margin-bottom:50px !important;
+  background-color: #206ddf;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.img-format:hover{
+background-color: #205eba;
 }
