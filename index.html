@@ -20,7 +20,10 @@
 						<p>AGREGAR NUEVO REGISTRO</p>
 						<!-- Botón para cerrar el modal -->
 						<div class="btn-close">
-							<button class="btn-newWrapReg del-parag" id="close-modal">
+							<button
+								class="btn-newWrapReg del-parag"
+								id="close-modal"
+							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									height="30"
@@ -46,6 +49,7 @@
 									type="text"
 									id="bookTitle"
 									name="bookTitle"
+									required
 								/>
 							</div>
 
@@ -56,13 +60,14 @@
 									type="text"
 									id="authorName"
 									name="authorName"
+									required
 								/>
 							</div>
 
 							<!-- Género -->
 							<div class="wrapper-details gen">
 								<label for="bookGenre">Género</label>
-								<select name="bookGenre" id="bookGender">
+								<select name="bookGenre" id="bookGender" required>
 									<option value="">Escoge un género</option>
 									<option value="BL">BL</option>
 									<option value="GL">GL</option>
@@ -80,15 +85,13 @@
 								<textarea
 									name="bookDescription"
 									id="bookDescription"
+									required
 								></textarea>
-
 
 								<div id="containerParags">
 									<div id="contentParag1"></div>
 									<div id="contentParag2"></div>
 								</div>
-
-
 
 								<button id="addParag">
 									+ Agregar otro párrafo a la descripcion
@@ -102,6 +105,7 @@
 									type="text"
 									id="publisher"
 									name="publisher"
+									required
 								/>
 							</div>
 
@@ -112,13 +116,14 @@
 									type="text"
 									id="collection"
 									name="collection"
+									required
 								/>
 							</div>
 
 							<!-- ISBN -->
 							<div class="wrapper-details">
 								<label for="ISBN">ISBN</label>
-								<input type="text" id="ISBN" name="ISBN" />
+								<input type="text" id="ISBN" name="ISBN" required/>
 							</div>
 
 							<!-- País de Origen -->
@@ -130,6 +135,7 @@
 									type="text"
 									id="countryOrigin"
 									name="countryOrigin"
+									required
 								/>
 							</div>
 
@@ -142,6 +148,7 @@
 									type="number"
 									id="publicationYear"
 									name="publicationYear"
+									required
 								/>
 							</div>
 
@@ -152,6 +159,7 @@
 									type="number"
 									id="numPages"
 									name="numPages"
+									required
 								/>
 							</div>
 
@@ -162,6 +170,7 @@
 									type="number"
 									id="volumeNumber"
 									name="volumeNumber"
+									required
 								/>
 							</div>
 
@@ -173,13 +182,14 @@
 									id="bookSize"
 									name="bookSize"
 									placeholder=" Ejemplo 13 x 18 cms"
+									required
 								/>
 							</div>
 
 							<!-- Formato -->
 							<div class="wrapper-details">
 								<label for="bookFormat">Formato</label>
-								<select name="bookFormat" id="bookFormat">
+								<select name="bookFormat" id="bookFormat" required>
 									<option value=""></option>
 									<option value="Tankobon">Tankobon</option>
 									<option value="Aizoban">Aizoban</option>
@@ -199,13 +209,14 @@
 									type="text"
 									id="publicationType"
 									name="publicationType"
+									required
 								/>
 							</div>
 
 							<!-- Color -->
 							<div class="wrapper-details">
 								<label for="bookColor">Color</label>
-								<select name="bookColor" id="bookColor">
+								<select name="bookColor" id="bookColor" required>
 									<option value=""></option>
 									<option value="B/N">B/N</option>
 									<option value="Color">Color</option>
@@ -222,6 +233,7 @@
 									type="number"
 									id="priceAmount"
 									name="priceAmount"
+									required
 								/>
 							</div>
 
@@ -232,6 +244,7 @@
 									type="number"
 									id="stockQuantity"
 									name="stockQuantity"
+									required
 								/>
 							</div>
 

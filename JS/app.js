@@ -80,6 +80,12 @@ window.addEventListener("DOMContentLoaded", async () => {
 							<p class="description">
 									${items.description}
 							</p>
+							<p class="description">
+									${items.description2}
+							</p>
+							<p class="description">
+									${items.description3}
+							</p>
 						</div>
 						<div class="wrapper-information">
 							<p class="referencia">Editorial:</p>
@@ -186,6 +192,22 @@ window.addEventListener("DOMContentLoaded", async () => {
 				const bookGender = (form["bookGender"].value = doc.gender);
 				const bookDescription = (form["bookDescription"].value =
 					doc.description);
+				const data2 = document.getElementById("contentParag1");
+				const data3 = document.getElementById("contentParag2");
+
+				if (doc.description2) {
+					data2.innerHTML = `<textarea id="bookDescription1">${doc.description2}</textarea>`;
+				}
+
+				if (doc.description3) {
+					data3.innerHTML = `<textarea id="bookDescription2">${doc.description3}</textarea>`;
+				}
+
+				const btnAddParag = document.getElementById("addParag");
+
+				if (doc.description2 && doc.description3) {
+					btnAddParag.style.display = "none";
+				}
 				const bookEditorial = (form["publisher"].value = doc.editorial);
 
 				const bookCollection = (form["collection"].value =
@@ -234,6 +256,18 @@ form.addEventListener("submit", (e) => {
 	const bookAuthor = form["authorName"];
 	const bookGender = form["bookGender"];
 	const bookDescription = form["bookDescription"];
+	/*  */
+	const bookDescription2 = document.getElementById("bookDescription1");
+	const bookDescription3 = document.getElementById("bookDescription2");
+	let data2 = "",
+		data3 = "";
+	if (bookDescription2) {
+		data2 = bookDescription2.value;
+	}
+	if (bookDescription3) {
+		data3 = bookDescription3.value;
+	}
+	/*  */
 	const bookEditorial = form["publisher"];
 
 	const bookCollection = form["collection"];
@@ -259,6 +293,8 @@ form.addEventListener("submit", (e) => {
 			bookAuthor.value,
 			bookGender.value,
 			bookDescription.value,
+			data2,
+			data3,
 			bookEditorial.value,
 			bookCollection.value,
 			bookISBN.value,
@@ -280,6 +316,8 @@ form.addEventListener("submit", (e) => {
 			author: bookAuthor.value,
 			gender: bookGender.value,
 			description: bookDescription.value,
+			description2: data2,
+			description3: data3,
 			editorial: bookEditorial.value,
 			collectionBook: bookCollection.value,
 			isbn: bookISBN.value,

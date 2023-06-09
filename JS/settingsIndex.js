@@ -77,21 +77,12 @@ addParags.addEventListener("click", (e) => {
 	e.preventDefault();
 
 	if (contadorParag >= 1) addParags.style.display = "none";
-	if (contadorParag === 0) addParags.style.display = "block";
 
 	if (contadorParag === 0 && contentParag1) {
-		contentParag1.innerHTML = `
-		<textarea
-		id="bookDescription1">
-		</textarea>
-		`;
+		contentParag1.innerHTML = `<textarea id="bookDescription1"></textarea>`;
 		contadorParag++;
 	} else if (contadorParag === 1 && contentParag2) {
-		contentParag2.innerHTML = `
-		<textarea
-		id="bookDescription2">
-		</textarea>
-		`;
+		contentParag2.innerHTML = `<textarea id="bookDescription2"></textarea>`;
 		contadorParag++;
 	}
 });
@@ -100,20 +91,14 @@ delParags.addEventListener("click", (e) => {
 	e.preventDefault();
 	const dataText1 = document.getElementById("bookDescription1");
 	const dataText2 = document.getElementById("bookDescription2");
+	if (contadorParag >= 0) addParags.style.display = "block";
 
-	if (dataText1) {
-		contadorParag = 1;
-	} else if (dataText2) {
-		contadorParag++;
-	} else {
-		contadorParag = 0;
-	}
-
-	if (dataText1 && dataText1.value.length <= 2) {
+	if (dataText1 && dataText1.value.length === 0) {
 		contentParag1.removeChild(dataText1);
 	}
 
 	if (dataText2 && dataText2.value.length <= 2) {
 		contentParag2.removeChild(dataText2);
+		contadorParag = 0;
 	}
 });
