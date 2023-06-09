@@ -20,12 +20,11 @@ window.addEventListener("DOMContentLoaded", async () => {
 			html += `
 		<div class="wrapper-cards">
 			<div class="botones">
+			<div class="idBook">ID: ${doc.id}</div>
 				<div class="btn-Action">
 					<div>
 						<button
-							class="btn-newWrapReg color-edit btn-edit"
-              data-id="${doc.id}"
-						>
+							class="btn-newWrapReg color-edit btn-edit" data-id="${doc.id}">
 							<svg xmlns="http://www.w3.org/2000/svg"
                height="30"
                 viewBox="0 -960 960 960" width="30"
@@ -246,10 +245,8 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 const form = document.getElementById("item-form");
-
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
-
 	const formModal = document.querySelector(".modalForm");
 
 	const bookTitle = form["bookTitle"];
