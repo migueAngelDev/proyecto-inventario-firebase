@@ -4,9 +4,12 @@ import {
 	onGetItems,
 	deleteItem,
 	getItem,
+	updateItem,
 } from "./firesbase.js";
 
 const containerItems = document.querySelector(".inventory-cards-container");
+let edtiStatus = false;
+let ID = "";
 
 window.addEventListener("DOMContentLoaded", async () => {
 	onGetItems((querySnapshot) => {
@@ -92,7 +95,7 @@ window.addEventListener("DOMContentLoaded", async () => {
               <div class="wrapper-information">
                   <p class="referencia">ISBN:</p>
                   <p class="information">
-                    ${items.isbn}
+				  ${items.isbn}
                   </p>
               </div>
               <div class="wrapper-information">
@@ -204,11 +207,17 @@ window.addEventListener("DOMContentLoaded", async () => {
 				const bookPrice = (form["priceAmount"].value = doc.price);
 				const bookStockQuantity = (form["stockQuantity"].value =
 					doc.stockQuantity);
+
+				const saveUpdate = document.getElementById("saveItems");
 				let labelImage = document.querySelector(".img-format");
 				labelImage.textContent = "Cambiar portada";
 
 				let preview = document.getElementById("preview");
 				preview.innerHTML = `<img src="${doc.image}" alt="${doc.title}" id="fileProps">`;
+
+				edtiStatus = true;
+				ID = e.target.dataset.id;
+				saveUpdate.value = "Guardar cambios";
 			});
 		});
 	});
@@ -244,26 +253,51 @@ form.addEventListener("submit", (e) => {
 	const bookImage = form["fileProps"];
 	const bookImagePreview = document.getElementById("preview");
 
-	saveItem(
-		bookTitle.value,
-		bookAuthor.value,
-		bookGender.value,
-		bookDescription.value,
-		bookEditorial.value,
-		bookCollection.value,
-		bookISBN.value,
-		bookCountryOrigin.value,
-		bookPublication.value,
-		bookPages.value,
-		bookVolume.value,
-		bookSize.value,
-		bookFormat.value,
-		bookTypePublication.value,
-		bookColor.value,
-		bookPrice.value,
-		bookStockQuantity.value,
-		bookImage.src
-	);
+	if (!edtiStatus) {
+		saveItem(
+			bookTitle.value,
+			bookAuthor.value,
+			bookGender.value,
+			bookDescription.value,
+			bookEditorial.value,
+			bookCollection.value,
+			bookISBN.value,
+			bookCountryOrigin.value,
+			bookPublication.value,
+			bookPages.value,
+			bookVolume.value,
+			bookSize.value,
+			bookFormat.value,
+			bookTypePublication.value,
+			bookColor.value,
+			bookPrice.value,
+			bookStockQuantity.value,
+			bookImage.src
+		);
+	} else {
+		updateItem(ID, {
+			title: bookTitle.value,
+			author: bookAuthor.value,
+			gender: bookGender.value,
+			description: bookDescription.value,
+			editorial: bookEditorial.value,
+			collectionBook: bookCollection.value,
+			isbn: bookISBN.value,
+			countryOrigin: bookCountryOrigin.value,
+			publication: bookPublication.value,
+			pages: bookPages.value,
+			volume: bookVolume.value,
+			size: bookSize.value,
+			format: bookFormat.value,
+			typePublication: bookTypePublication.value,
+			color: bookColor.value,
+			price: bookPrice.value,
+			stockQuantity: bookStockQuantity.value,
+			image: bookImage.src,
+		});
+
+		edtiStatus = false;
+	}
 	setTimeout(() => {
 		form.reset();
 		bookImagePreview.innerHTML = "";

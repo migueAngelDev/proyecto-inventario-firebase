@@ -20,17 +20,13 @@
 						<p>AGREGAR NUEVO REGISTRO</p>
 						<!-- Botón para cerrar el modal -->
 						<div class="btn-close">
-							<button
-								href=""
-								class="btn-newWrapReg"
-								id="close-modal"
-							>
+							<button class="btn-newWrapReg del-parag" id="close-modal">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									height="30"
 									viewBox="0 -960 960 960"
 									width="30"
-                  fill="white"
+									fill="white"
 								>
 									<path
 										d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
@@ -84,8 +80,19 @@
 								<textarea
 									name="bookDescription"
 									id="bookDescription"
-									rows="10"
 								></textarea>
+
+
+								<div id="containerParags">
+									<div id="contentParag1"></div>
+									<div id="contentParag2"></div>
+								</div>
+
+
+
+								<button id="addParag">
+									+ Agregar otro párrafo a la descripcion
+								</button>
 							</div>
 
 							<!-- Editorial -->
@@ -243,7 +250,11 @@
 
 							<!-- Botón -->
 							<div class="btn-add">
-								<input type="submit" value="Guardar" />
+								<input
+									type="submit"
+									value="Guardar"
+									id="saveItems"
+								/>
 							</div>
 						</form>
 					</div>

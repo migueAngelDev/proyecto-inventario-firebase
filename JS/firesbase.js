@@ -9,6 +9,8 @@ import {
 	deleteDoc,
 	doc,
 	getDoc,
+	updateDoc,
+	setDoc,
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -78,12 +80,12 @@ export const deleteItem = (id) => {
 	deleteDoc(doc(db, "mangas", id));
 };
 
-// export const getItem = async (id) => {
-// 	getDoc(doc(db, "mangas", id));
-// };
-
 export const getItem = async (id) => {
 	const docRef = doc(db, "mangas", id);
 	const docSnap = await getDoc(docRef);
 	return docSnap.data();
+};
+
+export const updateItem = (id, newFields) => {
+	updateDoc(doc(db, "mangas", id), newFields);
 };

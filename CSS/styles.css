@@ -298,7 +298,7 @@ img:hover {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .gen {
@@ -393,7 +393,7 @@ textarea {
 }
 
 .img-format{
-  margin-bottom:50px !important;
+  margin:30px 0 !important;
   background-color: #206ddf;
   color: #FFFFFF;
   cursor: pointer;
@@ -405,4 +405,14 @@ textarea {
 
 .img-format:hover{
 background-color: #205eba;
+}
+
+#addParag{
+  padding:10px;
+  background-color: #206ddf;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
 }
