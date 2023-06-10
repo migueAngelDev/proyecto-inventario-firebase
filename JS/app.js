@@ -18,6 +18,11 @@ window.addEventListener("DOMContentLoaded", async () => {
 		querySnapshot.forEach((doc) => {
 			const items = doc.data();
 			html += `
+			<div class="contadorItems">
+			<p>
+			Número de registros: ${querySnapshot.docs.length}
+			</p>
+			</div>
 		<div class="wrapper-cards">
 			<div class="botones">
 			<div class="idBook">ID: ${doc.id}</div>
