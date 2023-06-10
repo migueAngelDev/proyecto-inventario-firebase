@@ -192,6 +192,7 @@ img:hover {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 20px;
   font-family: Nunito, sans-serif;
   font-weight: bold;
   text-align: center;
@@ -273,9 +274,6 @@ img:hover {
       rgba(0, 0, 0, 0.1),
       rgba(255, 255, 255, 0.1)
     );
-  }
-  .developers {
-    gap: 20px;
   }
   .section-details-book1,
   .section-details-book2 {
