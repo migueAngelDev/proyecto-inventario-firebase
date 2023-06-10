@@ -264,12 +264,6 @@ img:hover {
   }
 }
 
-/* @media (max-width: 1500px) {
-  .section-details-book .wrapper-information {
-    height: auto;
-  }
-}
- */
 @media (max-width: 640px) {
   .section-details-book,
   .section-information-book {
