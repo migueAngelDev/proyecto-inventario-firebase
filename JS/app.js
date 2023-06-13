@@ -6,23 +6,21 @@ import {
 	getItem,
 	updateItem,
 } from "./firesbase.js";
+const counterItems = document.querySelector(".contador");
 
 const containerItems = document.querySelector(".inventory-cards-container");
 let edtiStatus = false;
 let ID = "";
+let cnatidadDeItems = 0;
 
 window.addEventListener("DOMContentLoaded", async () => {
 	onGetItems((querySnapshot) => {
+		cnatidadDeItems = querySnapshot.docs.length;
 		let html = "";
 
 		querySnapshot.forEach((doc) => {
 			const items = doc.data();
 			html += `
-			<div class="contadorItems">
-			<p>
-			Número de registros: ${querySnapshot.docs.length}
-			</p>
-			</div>
 		<div class="wrapper-cards">
 			<div class="botones">
 			<div class="idBook">ID: ${doc.id}</div>
@@ -169,6 +167,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 		});
 
 		containerItems.innerHTML = html;
+		counterItems.innerHTML = `<p>Total de registros: ${cnatidadDeItems}</p>`;
 
 		const btnsDelete = containerItems.querySelectorAll(".btn-del");
 
